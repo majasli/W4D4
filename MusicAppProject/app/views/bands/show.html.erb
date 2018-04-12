@@ -1,0 +1,18 @@
+
+<h1 class='page-header'> <%= @band.name %> </h1>
+
+
+
+<h4 class='sub-header'> Few things you can do to your band: </h4>
+<ul>
+  <li> <a class="button" href="<%= edit_band_url(@band) %>"> Edit Band Name</a>   </li>
+
+    <li> 
+     <form action="<%= band_url(@band) %>" method="POST">
+       <input type="hidden" name="_method" value="DELETE">
+       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" >
+       <input type="submit" value="Delete Band From List">
+     </form>
+   </li>
+
+</ul>
